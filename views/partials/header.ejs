@@ -10,12 +10,15 @@
 <body>
 
 <nav>
-    <a href="">Home</a>
-    <img src="/images/camera.svg">
+    <a href="/">Home</a>
+    <a href="/notes">Daily Notes</a>
+    <a href="/positions">Positions</a>
+    <a href="/links">Links</a>
+    <a href="/goals">Goals</a>
+    <img class = "avatar" src="https://cdn4.iconfinder.com/data/icons/forum-buttons-and-community-signs-1/794/profile-3-512.png">
     <% if (user) { %> 
         <a href="/logout">LOG OUT</a>
     <% } else { %>
         <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
     <% } %>
 </nav>
-

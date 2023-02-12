@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+Create a new position:
+<form action="/positions" method="POST">
+    <label>Position:</label>
+    <input type="text" name="name">
+    <label>Content:</label>
+    <input type="text" name="content">
+    <input type="submit" value="Add Position">
+</form>
+
+Positions:
+
+<ul>
+    <% positions.forEach(function(p) { %>
+
+    <li>
+        <%= p.name %>
+        - 
+        <%= p.content %>
+    </li>
+    <% }) %>
+</ul>
+
+<%- include('../partials/footer') %>

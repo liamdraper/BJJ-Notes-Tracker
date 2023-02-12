@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+Add a new note:
+<form action="/notes" method="POST">
+    <label>Name:</label>
+    <input type="text" name="content">
+    <label>Date:</label>
+    <input type="datetime-local" name="date">
+    <input type="submit" value="Add Note">
+</form>
+
+<ul>
+    <% notes.forEach(function(n) { %>
+    <li>
+        <%= n.content  %>
+        -
+        <%= n.date  %>
+    </li>
+    <% }); %>
+</ul> 
+
+<%- include('../partials/footer') %> 
+

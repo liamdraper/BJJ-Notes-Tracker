@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+Create a new link: 
+<form action="/links" method="POST">
+    <label>Link:</label>
+    <input type="text" name="link">
+    <input type="submit" name="Submit">
+</form>
+
+Links:
+
+<ul>
+    <% links.forEach(function() { %> 
+    <li>
+        <%= link %>
+    </li>
+    <% }) %>
+</ul>
+
+<%- include('../partials/footer') %>
