@@ -13,13 +13,14 @@ Positions:
 
 <ul>
     <% positions.forEach(function(p) { %>
-
+    <% if (user?._id.equals(p.user)) { %>
     <li>
         <%= p.name %>
         - 
         <%= p.content %>
     </li>
-    <% }) %>
+    <% } %>
+    <% }); %>
 </ul>
 
 <%- include('../partials/footer') %>

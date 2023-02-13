@@ -12,8 +12,12 @@ function index(req, res) {
 }
 
 function create(req, res) {
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
     const link = new Link(req.body);
     link.save (function(err) {
+        req.body.user = req.user._id;
         if (err) return res.redirect('/links');
         res.redirect('/links');
     })

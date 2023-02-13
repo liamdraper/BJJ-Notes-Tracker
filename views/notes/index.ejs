@@ -13,11 +13,25 @@ Add a new note:
     <% notes.forEach(function(n) { %>
         <% if (user?._id.equals(n.user)) { %>
         <li>
+        <%= n.date.toDateString()  %>
+        <br><br>
         <%= n.content  %>
-        <%= n.date  %>
         <form action="/notes/<%= n._id %>?_method=DELETE" method="POST">
             <button type="submit">X</button>
         </form>
+        <button class="close-button">Edit</button>
+        <div class="modal" id="modal">
+            <div class="modal-title">Edit Note</div>
+            <button class="close-button">&times;</button>
+
+            <form action="/notes/<%= n._id %>?_method=PUT" method="POST">
+                <input class="modal-note" type="text" name="note" value="<%= n.content %>">
+                <button type="submit">Edit NOTE</button>
+
+            </form>
+            <div class="modal-delete">Delete</div>
+        </div>
+        <!-- <a href="notes/show">+</a> -->
     </li>
         <% } %>
     <% }); %>   

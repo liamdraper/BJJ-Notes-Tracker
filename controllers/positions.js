@@ -12,9 +12,13 @@ function index(req, res) {
 }
 
 function create(req,res) {
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
     const position = new Position(req.body);
     position.save(function(err) {
+        req.body.user = req.user._id;
         if (err) return res.redirect('/positions');
-        res.redirect(`/positions/${position._id}`);
+        res.redirect('/positions');
     })
 }
