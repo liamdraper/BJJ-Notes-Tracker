@@ -10,9 +10,9 @@ Create a new link:
 Links:
 
 <ul>
-    <% links.forEach(function() { %> 
+    <% links.forEach(function(l) { %> 
     <li>
-        <%= link %>
+        <a href="<%= l.link %>" target="_blank"><%= l.link %></a>
     </li>
     <% }) %>
 </ul>

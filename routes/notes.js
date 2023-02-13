@@ -1,16 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const notesCtrl = require('../controllers/notes');
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 // All routes start with '/notes'
 
 // GET /notes
-router.get('/', notesCtrl.index);
+router.get('/', ensureLoggedIn, notesCtrl.index);
 
-//GET /notes/new
-//router.get('/new', notesCtrl.new)
+//POST /notes
+router.post('/', ensureLoggedIn, notesCtrl.create)
 
-//POST /notes/
-router.post('/', notesCtrl.create)
+//DELETE /notes/:id
+
+router.delete('/:id', notesCtrl.delete);
 
 module.exports = router;

@@ -11,12 +11,16 @@ Add a new note:
 
 <ul>
     <% notes.forEach(function(n) { %>
-    <li>
+        <% if (user?._id.equals(n.user)) { %>
+        <li>
         <%= n.content  %>
-        -
         <%= n.date  %>
+        <form action="/notes/<%= n._id %>?_method=DELETE" method="POST">
+            <button type="submit">X</button>
+        </form>
     </li>
-    <% }); %>
+        <% } %>
+    <% }); %>   
 </ul> 
 
 <%- include('../partials/footer') %> 

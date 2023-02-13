@@ -8,6 +8,6 @@ const linksCtrl = require('../controllers/links');
 router.get('/', linksCtrl.index);
 
 //POST /links
-router.get('/', linksCtrl.create);
+router.post('/', linksCtrl.create);
 
 module.exports = router;

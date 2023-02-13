@@ -13,7 +13,7 @@ function index(req, res) {
 
 function create(req, res) {
     const link = new Link(req.body);
-    link.save(function(err) {
+    link.save (function(err) {
         if (err) return res.redirect('/links');
         res.redirect('/links');
     })
