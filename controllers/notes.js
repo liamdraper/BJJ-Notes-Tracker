@@ -73,14 +73,13 @@ function deleteNote(req, res, next) {
     });
 }
 
-function update (req, res) {
-    Note.findOne({
-        'notes._id': req.params.id
-    }).then(function (note) {
-        note.update (req.params.id, req.body);
-        note.save()
-    .then(function () {
+function update(req, res) {
+    Note.findOneAndUpdate(
+      {_id: req.params.id},
+      req.body,
+      function(err, note) {
+        if (err || !note) return res.redirect('/notes');
         res.redirect('/notes');
-        })
-    })
-}
+      }
+    );
+  }

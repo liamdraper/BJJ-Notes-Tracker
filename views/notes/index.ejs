@@ -17,15 +17,15 @@ Add a new note:
         <br><br>
         <%= n.content  %>
         <form action="/notes/<%= n._id %>?_method=DELETE" method="POST">
-            <button type="submit">X</button>
+            <button type="submit">&times;</button>
         </form>
-        <button class="close-button">Edit</button>
-        <div class="modal active" id="modal">
+        <button id="open-button">Edit</button>
+        <div class="modal" id="modal">
             <div class="modal-title">Edit Note</div>
-            <button class="close-button">&times;</button>
+            <button id="close-button">&times;</button>
 
             <form action="/notes/<%= n._id %>?_method=PUT" method="POST">
-                <input class="modal-note" type="text" name="note" value="<%= n.content %>">
+                <input class="modal-note" type="text" name="content" value="<%= n.content %>">
                 <button type="submit">Edit NOTE</button>
 
             </form>
@@ -36,6 +36,20 @@ Add a new note:
         <% } %>
     <% }); %>   
 </ul> 
+
+<!-- need to make async?? if no notes exist-->
+<script>
+    const openBtn = document.getElementById('open-button');
+    const closeBtn = document.getElementById('close-button');
+    const modal = document.getElementById('modal');
+    openBtn.addEventListener('click', (e) => {
+        modal.classList.add('active');
+    })
+    closeBtn.addEventListener('click', (e) => {
+        modal.classList.remove('active');
+    })
+</script>
+
 
 <%- include('../partials/footer') %> 
 
