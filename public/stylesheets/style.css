@@ -83,6 +83,20 @@ a {
   padding: 10px 15px;
 }
 
-#scheduler {
+#scheduler-days {
+  display: grid;
+  grid-template-columns: repeat(7, 10vmin);
+  grid-template-rows: repeat(1, 2vmin);
+}
 
+#scheduler-times {
+  display: grid;
+  grid-template-columns: repeat(7, 10vmin);
+  grid-template-rows: repeat(37, 2vmin);
+  height: 30vmin;
+  width: 30vmin
+}
+
+#scheduler-times > div {
+  border: .1vmin solid black;
 }
