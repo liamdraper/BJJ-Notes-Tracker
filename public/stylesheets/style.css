@@ -24,6 +24,8 @@ nav {
 
 #page {
   font-size: 3vmin;
+  margin-top: 5vmin;
+  margin-left: 5vmin;
 }
 
 ul {
@@ -32,9 +34,11 @@ ul {
 
 li {
   white-space: pre-wrap;
-  border: .5vmin solid black;
+  border: .4vmin solid gray;
+  border-radius: 2vmin;
   height: 30vmin;
   width: 40vmin;
+  margin: 2vmin;
 }
 
 li > * {
@@ -85,8 +89,8 @@ textarea {
   border-radius: 10%;
   z-index: 10;
   background-color: white;
-  width: 30vmin;
-  max-width: 80%;
+  height: 30vmin;
+  width: 100vmin;
 }
 
 .modal.active {
@@ -101,7 +105,7 @@ textarea {
 }
 
 .modal-title {
-  font-size: 3vmin;
+  font-size: 2vmin;
   font-weight: bold
 }
 
