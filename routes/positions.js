@@ -11,4 +11,10 @@ router.get('/', ensureLoggedIn, positionsCtrl.index);
 //POST /positions
 router.post('/', positionsCtrl.create);
 
+//DELETE /positions/:id
+router.delete('/:id', positionsCtrl.delete)
+
+//PUT /positions/:id
+router.put('/:id', positionsCtrl.update)
+
 module.exports = router;

@@ -2,7 +2,9 @@ const Position = require('../models/position');
 
 module.exports = {
     index,
-    create
+    create,
+    delete: deletePosition,
+    update
 }
 
 function index(req, res) {
@@ -22,3 +24,29 @@ function create(req,res) {
         res.redirect('/positions');
     })
 }
+
+function deletePosition(req, res, next) {
+    Position.findOne({
+        'positions._id': req.params.id
+    }).then(function(position) {
+        if (!position) return res.redirect('/positions');
+        position.remove(req.params.id)
+        .then(function() {
+            res.redirect('/positions')
+        })
+        .catch(function(err) {
+            return next(err);
+        });
+    });
+}
+
+function update(req, res) {
+    Position.findOneAndUpdate(
+      {_id: req.params.id},
+      req.body,
+      function(err, position) {
+        if (err || !position) return res.redirect('/positions');
+        res.redirect('/positions');
+      }
+    );
+  }

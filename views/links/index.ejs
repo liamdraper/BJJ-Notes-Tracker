@@ -9,10 +9,13 @@ Create a new link:
 
 Links:
 
-<ul>
+<ul id="link-ul">
     <% links.forEach(function(l) { %> 
-    <li>
+    <li id="link-li">
         <a href="<%= l.link %>" target="_blank"><%= l.link %></a>
+        <form action="/links/<%= l._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+        </form>
     </li>
     <% }) %>
 </ul>

@@ -126,6 +126,19 @@ textarea {
   padding: 10px 15px;
 }
 
+#link-ul {
+  list-style-type: disc;
+}
+
+#link-li {
+  border: none;
+}
+
+#link-li>a{
+  color: #0000EE;
+  text-decoration: underline;
+}
+
 #scheduler-days {
   display: grid;
   grid-template-columns: repeat(7, 10vmin);

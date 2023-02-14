@@ -2,7 +2,8 @@ const Link = require('../models/link');
 
 module.exports = {
     index,
-    create
+    create,
+    delete: deleteLink
 }
 
 function index(req, res) {
@@ -21,4 +22,19 @@ function create(req, res) {
         if (err) return res.redirect('/links');
         res.redirect('/links');
     })
+}
+
+function deleteLink(req, res, next) {
+    Link.findOne({
+        'links._id': req.params.id
+    }).then(function(link) {
+        if (!link) return res.redirect('/links');
+        link.remove(req.params.id)
+        .then(function() {
+            res.redirect('/links')
+        })
+        .catch(function(err) {
+            return next(err);
+        });
+    });
 }
