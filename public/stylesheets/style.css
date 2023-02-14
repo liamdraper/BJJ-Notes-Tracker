@@ -15,11 +15,15 @@ body {
 nav {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   font-size: 3vmin;
   height: 100vmin;
   background-color: lightblue;
   text-align: center;
+}
+
+nav > * {
+  height: 10vmin;
 }
 
 #page {
@@ -166,11 +170,11 @@ textarea {
 }
 
 .taken {
-  background-color: red;
+  background-color: lightgreen;
 }
 
 .avail {
-  background-color: green;
+  background-color: white;
 }
 
 

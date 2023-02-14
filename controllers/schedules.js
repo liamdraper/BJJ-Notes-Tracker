@@ -7,11 +7,8 @@ module.exports = {
 
 function index (req, res) {
     Schedule.find({}, function(err, schedules) {
-        res.render('schedules/index', { schedules: [
-            {activity: 'Workout', day: 'Monday', timeStart: 11.5, timeEnd: 13},
-            {activity: 'BJJ Class asdasd fasdfasda sdfasdf asdf', day: 'Monday', timeStart: 14.5, timeEnd: 16.5},
-        ], test:true});
-    })
+        res.render('schedules/index', { schedules });
+    });
 }
 
 function create (req, res) {
@@ -24,9 +21,7 @@ function create (req, res) {
     })
 }
 
-// // Monday {
-//     600: true,
-//     630: false
-// }
-
-// //
+// res.render('schedules/index', { schedules: [
+//     {activity: 'Workout', day: 'Monday', timeStart: 11.5, timeEnd: 13},
+//     {activity: 'BJJ Class asdasd fasdfasda sdfasdf asdf', day: 'Monday', timeStart: 14.5, timeEnd: 16.5},
+// ], test:true});
