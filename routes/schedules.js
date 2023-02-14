@@ -7,4 +7,7 @@ const schedulesCtrl = require('../controllers/schedules');
 // GET /schedules
 router.get('/', schedulesCtrl.index);
 
+//POST /schedules
+router.post('/', schedulesCtrl.create);
+
 module.exports = router;

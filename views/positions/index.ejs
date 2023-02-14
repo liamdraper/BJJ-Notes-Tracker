@@ -18,6 +18,8 @@ Positions:
         <%= p.name %>
         - 
         <%= p.content %>
+        <form action="/positions/<%= p._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
     </li>
     <% } %>
     <% }); %>

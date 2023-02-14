@@ -2,10 +2,10 @@
 
 Add a new note:
 <form action="/notes" method="POST">
-    <label>Name:</label>
-    <input type="text" name="content">
     <label>Date:</label>
     <input type="datetime-local" name="date">
+    <label>Note:</label>
+    <textarea name="content" id="" cols="20" rows="4"></textarea>
     <input type="submit" value="Add Note">
 </form>
 
@@ -16,9 +16,6 @@ Add a new note:
         <%= n.date.toDateString()  %>
         <br><br>
         <%= n.content  %>
-        <form action="/notes/<%= n._id %>?_method=DELETE" method="POST">
-            <button type="submit">&times;</button>
-        </form>
         <button id="open-button">Edit</button>
         <div class="modal" id="modal">
             <div class="modal-title">Edit Note</div>
@@ -26,10 +23,11 @@ Add a new note:
 
             <form action="/notes/<%= n._id %>?_method=PUT" method="POST">
                 <input class="modal-note" type="text" name="content" value="<%= n.content %>">
-                <button type="submit">Edit NOTE</button>
-
+                <button type="submit">Edit Note</button>
             </form>
-            <div class="modal-delete">Delete</div>
+            <form action="/notes/<%= n._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete Note</button>
+            </form>
         </div>
         <!-- <a href="notes/show">+</a> -->
     </li>
@@ -44,6 +42,7 @@ Add a new note:
     const modal = document.getElementById('modal');
     openBtn.addEventListener('click', (e) => {
         modal.classList.add('active');
+        console.log('test')
     })
     closeBtn.addEventListener('click', (e) => {
         modal.classList.remove('active');

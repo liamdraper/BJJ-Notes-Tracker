@@ -1,8 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
+  padding-top: none;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: 100vmin;
-  background-color: #ceeff0;
+  /* background-color: #ceeff0; */
   display: grid;
   grid-template-columns: 30vmin 90vmin;
 }
@@ -11,16 +16,41 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 2vmin;
-  height: 70vmin;
+  font-size: 3vmin;
+  height: 100vmin;
+  background-color: lightblue;
+  text-align: center;
 }
 
-nav > a {
-  
+#page {
+  font-size: 3vmin;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  white-space: pre-wrap;
+  border: .5vmin solid black;
+  height: 30vmin;
+  width: 40vmin;
+}
+
+li > * {
+}
+
+nav >:hover {
+  background-color: lightgrey;
 }
 
 a {
-  color: #00B7FF;
+  color: black;
+  text-decoration: none;
+}
+
+#nav-active {
+  color: blue;
 }
 
 .login {
@@ -36,6 +66,15 @@ a {
 
 .avatar {
   height: 40px;
+}
+
+textarea {
+  background-color: #dddddd;
+  border-radius: 1vmin;
+  border: .1vmin solid transparent;
+  outline: none;
+  height: 10vmin;
+  width: 30vmin;
 }
 
 .modal {
@@ -86,17 +125,26 @@ a {
 #scheduler-days {
   display: grid;
   grid-template-columns: repeat(7, 10vmin);
-  grid-template-rows: repeat(1, 2vmin);
+  grid-template-rows: repeat(1, 5vmin);
 }
 
 #scheduler-times {
-  display: grid;
-  grid-template-columns: repeat(7, 10vmin);
-  grid-template-rows: repeat(37, 2vmin);
-  height: 30vmin;
-  width: 30vmin
-}
+  display: flex;
+  flex-direction: row;
+} 
 
-#scheduler-times > div {
+#mon-col, #tue-col, #wed-col, #thu-col, #fri-col, #sat-col, #sun-col {
+  display: grid;
+  grid-template-columns: repeat(1, 10vmin);
+  grid-template-rows: repeat(35, 2vmin);
   border: .1vmin solid black;
 }
+
+#mon-col div, #tue-col div, #wed-col div, #thu-col div, #fri-col div, #sat-col div, #sun-col div {
+}
+
+
+
+/* #scheduler-times div {
+  border: .05vmin solid black;
+} */
