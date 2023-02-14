@@ -12,7 +12,7 @@ function index (req, res) {
      Note.find({})
         .sort('-date')
         .exec(function (err, notes) {
-         res.render('notes/index', { notes });
+         res.render('notes/index', { notes, test:true });
     })
 }
 

@@ -16,41 +16,41 @@ Scheduler
 
     <div id="scheduler-times">
         <section id="mon-col">
-            <div id="600"></div>
-            <div id="630"></div>
-            <div id="700"></div>
-            <div id="730"></div>
-            <div id="800"></div>
-            <div id="830"></div>
-            <div id="900"></div>
-            <div id="930"></div>
-            <div id="1000"></div>
-            <div id="1030"></div>
-            <div id="1100"></div>
-            <div id="1130"></div>
-            <div id="1200"></div>
-            <div id="1230"></div>
-            <div id="1300"></div>
-            <div id="1330"></div>
-            <div id="1400"></div>
-            <div id="1430"></div>
-            <div id="1500"></div>
-            <div id="1530"></div>
-            <div id="1600"></div>
-            <div id="1630"></div>
-            <div id="1700"></div>
-            <div id="1730"></div>
-            <div id="1800"></div>
-            <div id="1830"></div>
-            <div id="1900"></div>
-            <div id="1930"></div>
-            <div id="2000"></div>
-            <div id="2030"></div>
-            <div id="2100"></div>
-            <div id="2130"></div>
-            <div id="2200"></div>
-            <div id="2230"></div>
-            <div id="2300"></div>
+            <div id="600" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=6&&s.timeEnd>=6.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===6)?.activity %></div>
+            <div id="630" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=6.5&&s.timeEnd>=7) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===6.5)?.activity %></div>
+            <div id="700" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=7&&s.timeEnd>=7.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===7)?.activity %></div>
+            <div id="730" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=7.5&&s.timeEnd>=8) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===7.5)?.activity %></div>
+            <div id="800" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=8&&s.timeEnd>=8.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===8)?.activity %></div>
+            <div id="830" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=8.5&&s.timeEnd>=9) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===8.5)?.activity %></div>
+            <div id="900" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=9&&s.timeEnd>=9.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===9)?.activity %></div>
+            <div id="930" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=9.5&&s.timeEnd>=10) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===9.5)?.activity %></div>
+            <div id="1000" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=10&&s.timeEnd>=10.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===10)?.activity %></div>
+            <div id="1030" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=10.5&&s.timeEnd>=11) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===10.5)?.activity %></div>
+            <div id="1100" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=11&&s.timeEnd>=11.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===11)?.activity %></div>
+            <div id="1130" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=11.5&&s.timeEnd>=12) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===11.5)?.activity %></div>
+            <div id="1200" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=12&&s.timeEnd>=12.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===12)?.activity %></div>
+            <div id="1230" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=12.5&&s.timeEnd>=13) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===12.5)?.activity %></div>
+            <div id="1300" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=13&&s.timeEnd>=13.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===13)?.activity %></div>
+            <div id="1330" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=13.5&&s.timeEnd>=14) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===13.5)?.activity %></div>
+            <div id="1400" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=14&&s.timeEnd>=14.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===14)?.activity %></div>
+            <div id="1430" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=14.5&&s.timeEnd>=15) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===14.5)?.activity %></div>
+            <div id="1500" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=15&&s.timeEnd>=15.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===15)?.activity %></div>
+            <div id="1530" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=15.5&&s.timeEnd>=16) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===15.5)?.activity %></div>
+            <div id="1600" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=16&&s.timeEnd>=16.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===16)?.activity %></div>
+            <div id="1630" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=16.5&&s.timeEnd>=17) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===16.5)?.activity %></div>
+            <div id="1700" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=17&&s.timeEnd>=17.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===17)?.activity %></div>
+            <div id="1730" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=17.5&&s.timeEnd>=18) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===17.5)?.activity %></div>
+            <div id="1800" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=18&&s.timeEnd>=18.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===18)?.activity %></div>
+            <div id="1830" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=18.5&&s.timeEnd>=19) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===18.5)?.activity %></div>
+            <div id="1900" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=19&&s.timeEnd>=19.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===19)?.activity %></div>
+            <div id="1930" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=19.5&&s.timeEnd>=20) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===19.5)?.activity %></div>
+            <div id="2000" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=20&&s.timeEnd>=20.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===20)?.activity %></div>
+            <div id="2030" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=20.5&&s.timeEnd>=21) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===20.5)?.activity %></div>
+            <div id="2100" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=21&&s.timeEnd>=21.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===21)?.activity %></div>
+            <div id="2130" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=21.5&&s.timeEnd>=22) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===21.5)?.activity %></div>
+            <div id="2200" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=22&&s.timeEnd>=22.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===22)?.activity %></div>
+            <div id="2230" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=22.5&&s.timeEnd>=23) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===22.5)?.activity %></div>
+            <div id="2300" class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=23&&s.timeEnd>=23.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===23)?.activity %></div>
         </section>
         <section id="tue-col">
             <div id="600"></div>
@@ -598,12 +598,12 @@ Scheduler
     <input type="submit" value="Add Activity">
 </form>
 
-<% schedules.forEach(function(s) { %>
+<!-- <% schedules.forEach(function(s) { %>
     <%= s.day %>
 <script>
     console.log(<%= s.day %>)
     const day = document.getElementById(`${<%= s.day %>}`)
 </script>
-<% }) %>
+<% }) %> -->
 
 <%- include('../partials/footer') %>

@@ -150,6 +150,11 @@ textarea {
   flex-direction: row;
 } 
 
+#scheduler-times > section > div {
+  font-size: 1.2vmin;
+  overflow-y: visible;
+}
+
 #mon-col, #tue-col, #wed-col, #thu-col, #fri-col, #sat-col, #sun-col {
   display: grid;
   grid-template-columns: repeat(1, 10vmin);
@@ -160,6 +165,13 @@ textarea {
 #mon-col div, #tue-col div, #wed-col div, #thu-col div, #fri-col div, #sat-col div, #sun-col div {
 }
 
+.taken {
+  background-color: red;
+}
+
+.avail {
+  background-color: green;
+}
 
 
 /* #scheduler-times div {

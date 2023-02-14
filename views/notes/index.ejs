@@ -12,7 +12,7 @@ Add a new note:
 <ul>
     <% notes.forEach(function(n) { %>
         <% if (user?._id.equals(n.user)) { %>
-    <li>
+    <li style="color: <%= test ? 'red' : 'green' %>">
         <%= n.date.toDateString()  %>
         <br><%= n.content  %>
         <button id="open-button">Edit</button>
