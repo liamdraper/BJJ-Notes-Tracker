@@ -14,9 +14,6 @@ router.post('/', ensureLoggedIn, notesCtrl.create)
 //DELETE /notes/:id
 router.delete('/:id', notesCtrl.delete);
 
-//GET /notes/:id
-router.get('/:id', notesCtrl.show);
-
 //PUT /notes/:id
 router.put('/:id', notesCtrl.update);
 

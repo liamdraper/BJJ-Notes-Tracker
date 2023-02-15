@@ -2,7 +2,6 @@ const Note = require('../models/note');
 
 module.exports = {
     index,
-    show,
     create,
     delete: deleteNote,
     update
@@ -12,27 +11,8 @@ function index (req, res) {
      Note.find({})
         .sort('-date')
         .exec(function (err, notes) {
-         res.render('notes/index', { notes, test:true });
+         res.render('notes/index', { notes });
     })
-}
-
-function show (req, res) {
-//     const btn = 
-//     const modal = document.getElementById('modal');
-//     btn.addEventListener('click', e => {
-//         modal.classList.remove('active');
-// })
-//     Note.findById(req.params.id, function(err, note) {
-//         res.render('notes/show', note)
-//     })
-}
-
-function show (req, res) {
-    Note.findById(req.params.id, function(err, note) {
-        // Add 'active' class to modal
-        // const modal = ;
-        // res.render('notes/show', note);
-    });
 }
 
 function create (req, res) {
@@ -45,20 +25,13 @@ function create (req, res) {
     });
 }
 
-function deleteNote(req, res, next) {
-    Note.findOne({
-        'notes._id': req.params.id
-    }).then(function(note) {
-        if (!note) return res.redirect('/notes');
-        note.remove(req.params.id)
-        .then(function() {
-            res.redirect('/notes')
-        })
-        .catch(function(err) {
-            return next(err);
-        });
-    });
-}
+function deleteNote(req, res) {
+    Note.findOneAndDelete(
+      {_id: req.params.id}, function(err) {
+        res.redirect('/notes');
+      }
+    );
+  }
 
 function update(req, res) {
     Note.findOneAndUpdate(

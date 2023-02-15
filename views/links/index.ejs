@@ -11,13 +11,17 @@ Links:
 
 <ul id="link-ul">
     <% links.forEach(function(l) { %> 
+        <% if (user?._id.equals(l.user)) { %>
     <li id="link-li">
         <a href="<%= l.link %>" target="_blank"><%= l.link %></a>
         <form action="/links/<%= l._id %>?_method=DELETE" method="POST">
             <button type="submit">Delete</button>
         </form>
     </li>
+        <% } %>
     <% }) %>
 </ul>
+
+<a href="/links/shared">Communiy Links</a>
 
 <%- include('../partials/footer') %>

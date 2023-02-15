@@ -8,7 +8,10 @@ const userSchema = new Schema({
     required: true
   },
   email: String,
-  avatar: String
+  avatar: String,
+  weeklyGoals: {type: String, default: '1enter'},
+  monthlyGoals: {type: String, default: 'enter'},
+  yearlyGoals: {type: String, default: 'enter'},
 }, {
   timestamps: true
 });

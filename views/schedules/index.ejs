@@ -1,6 +1,8 @@
 <%- include('../partials/header') %>
 
 Scheduler
+<% schedules.forEach(function(s) { %>
+    <% if (user?._id.equals(s.user)) { %>
 <br><br>
 <section id="scheduler">
     <div id="scheduler-days">
@@ -274,6 +276,17 @@ Scheduler
         </section>
 </section>
 
+<ul>
+    <li>
+        <form action="/schedules/<%= s._id %>?_method=PUT" method="POST">
+            <input type="text" name="acitivity" value="<%= s.activity %>">
+            <button type="submit">Edit</button>
+        <form action="/schedules/<%= s._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+
 <form action="/schedules" method="POST">
     <label>Activity</label>
     <input type="text" name="activity">
@@ -364,12 +377,20 @@ Scheduler
     <input type="submit" value="Add Activity">
 </form>
 
-<!-- <% schedules.forEach(function(s) { %>
-    <%= s.day %>
-<script>
-    console.log(<%= s.day %>)
-    const day = document.getElementById(`${<%= s.day %>}`)
-</script>
-<% }) %> -->
+<% } %>
+<% }) %>
+
+<!-- <script>
+    // Add a button for each scheduled out activity
+    const monCol = document.querySelectorAll('#scheduler-times > section > div');
+    monCol.forEach(function(div) {
+        if (div.innerHTML) {
+            // Create button for first div
+            const btn = document.createElement('button');
+            btn.style.height= '2vmin';
+            div.appendChild(btn);
+        }
+    })
+</script> -->
 
 <%- include('../partials/footer') %>

@@ -2,7 +2,9 @@ const Schedule = require('../models/schedule');
 
 module.exports = {
     index,
-    create
+    create,
+    delete: deleteSchedule,
+    update
 }
 
 function index (req, res) {
@@ -12,16 +14,30 @@ function index (req, res) {
 }
 
 function create (req, res) {
-    //req.body.user = req.user._id;
+    req.body.user = req.user._id;
     const schedule = new Schedule(req.body);
     schedule.save(function (err) {
-        //req.body.user = req.user._id;
+        req.body.user = req.user._id;
         if (err) return res.redirect('/schedules');
         res.redirect('/schedules');
     })
 }
 
-// res.render('schedules/index', { schedules: [
-//     {activity: 'Workout', day: 'Monday', timeStart: 11.5, timeEnd: 13},
-//     {activity: 'BJJ Class asdasd fasdfasda sdfasdf asdf', day: 'Monday', timeStart: 14.5, timeEnd: 16.5},
-// ], test:true});
+function deleteSchedule(req, res) {
+    Schedule.findOneAndDelete(
+      {_id: req.params.id}, function(err) {
+        res.redirect('/schedules');
+      }
+    );
+  }
+
+function update(req, res) {
+    Schedule.findOneAndUpdate(
+      {_id: req.params.id},
+      req.body,
+      function(err, schedule) {
+        if (err || !schedule) return res.redirect('/schedules');
+        res.redirect('/schedules');
+      }
+    );
+  }

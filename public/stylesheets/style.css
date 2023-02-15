@@ -18,7 +18,7 @@ nav {
   justify-content: space-around;
   font-size: 3vmin;
   height: 100vmin;
-  background-color: lightblue;
+  background-color: #8b2abf;
   text-align: center;
 }
 
@@ -36,7 +36,7 @@ ul {
   list-style-type: none;
 }
 
-li {
+#positions-li {
   white-space: pre-wrap;
   border: .4vmin solid gray;
   border-radius: 2vmin;
@@ -181,3 +181,7 @@ textarea {
 /* #scheduler-times div {
   border: .05vmin solid black;
 } */
+
+.position-edit {
+  
+}

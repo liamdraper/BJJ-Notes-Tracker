@@ -6,11 +6,10 @@ const scheduleSchema = new Schema({
     day: {type: String, required: true, enum: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']},
     timeStart: {type: Number, required: true},
     timeEnd: {type: Number, required: true},
-    // user: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'User',
-    //     required: true
-    //   }
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+      }
 })
- 
 module.exports = mongoose.model('Schedule', scheduleSchema);

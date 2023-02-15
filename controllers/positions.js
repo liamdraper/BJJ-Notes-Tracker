@@ -15,8 +15,6 @@ function index(req, res) {
 
 function create(req,res) {
     req.body.user = req.user._id;
-    req.body.userName = req.user.name;
-    req.body.userAvatar = req.user.avatar;
     const position = new Position(req.body);
     position.save(function(err) {
         req.body.user = req.user._id;
@@ -25,20 +23,13 @@ function create(req,res) {
     })
 }
 
-function deletePosition(req, res, next) {
-    Position.findOne({
-        'positions._id': req.params.id
-    }).then(function(position) {
-        if (!position) return res.redirect('/positions');
-        position.remove(req.params.id)
-        .then(function() {
-            res.redirect('/positions')
-        })
-        .catch(function(err) {
-            return next(err);
-        });
-    });
-}
+function deletePosition(req, res) {
+    Position.findOneAndDelete(
+      {_id: req.params.id}, function(err) {
+        res.redirect('/positions');
+      }
+    );
+  }
 
 function update(req, res) {
     Position.findOneAndUpdate(
