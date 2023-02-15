@@ -1,8 +1,6 @@
 <%- include('../partials/header') %>
 
 Scheduler
-<% schedules.forEach(function(s) { %>
-    <% if (user?._id.equals(s.user)) { %>
 <br><br>
 <section id="scheduler">
     <div id="scheduler-days">
@@ -276,16 +274,22 @@ Scheduler
         </section>
 </section>
 
+<% schedules.forEach(function(s) { %>
+    <% if (user?._id.equals(s.user)) { %>
 <ul>
     <li>
         <form action="/schedules/<%= s._id %>?_method=PUT" method="POST">
-            <input type="text" name="acitivity" value="<%= s.activity %>">
+            <input type="text" name="activity" value="<%= s.activity %>">
             <button type="submit">Edit</button>
+        </form>
         <form action="/schedules/<%= s._id %>?_method=DELETE" method="POST">
             <button type="submit">Delete</button>
         </form>
     </li>
 </ul>
+
+<% } %>
+<% }) %>
 
 <form action="/schedules" method="POST">
     <label>Activity</label>
@@ -376,9 +380,6 @@ Scheduler
     </select>
     <input type="submit" value="Add Activity">
 </form>
-
-<% } %>
-<% }) %>
 
 <!-- <script>
     // Add a button for each scheduled out activity

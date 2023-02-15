@@ -1,18 +1,17 @@
 <%- include('../partials/header') %>
 
-Add a new note:
 <form action="/notes" method="POST">
     <label>Date:</label>
     <input type="datetime-local" name="date">
-    <label>Note:</label>
-    <textarea name="content" id="" cols="20" rows="4"></textarea>
     <input type="submit" value="Add Note">
+    <br>
+    <textarea name="content" id="" cols="20" rows="4"></textarea>
 </form>
 
 <ul>
     <% notes.forEach(function(n) { %>
         <% if (user?._id.equals(n.user)) { %>
-    <li>       <%= n.date.toDateString()  %>
+    <li><%= n.date %>
         <br><%= n.content  %>
         <button id="open-button">Edit</button>
         <div class="modal" id="modal">

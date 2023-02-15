@@ -20,6 +20,7 @@ Positions:
         <form class="position-edit" action="/positions/<%= p._id %>?_method=PUT" method="POST">
             <input class="modal-note" type="text" name="content" value="<%= p.content %>">
             <button type="submit">Edit Position</button>
+        </form>
         <form action="/positions/<%= p._id %>?_method=DELETE" method="POST">
             <button type="submit">Delete</button>
         </form>
