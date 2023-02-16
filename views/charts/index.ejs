@@ -4,10 +4,13 @@
     <% charts.forEach(function(c) { %>
     <li>
         <a href="/charts/<%= c._id %>"><%= c.name %></a>
+        <form action="/charts/<%= c._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+        </form>
     </li>
 </ul>
 <% }) %>
-
+<br>
 Create New Chart:
 <form action="/charts" method="POST">
     <label>Name:</label>

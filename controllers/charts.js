@@ -4,7 +4,8 @@ module.exports = {
     index,
     create,
     show,
-    update
+    update,
+    delete: deleteChart
 }
 
 function index(req, res) {
@@ -44,3 +45,11 @@ function update(req, res) {
 //         {name: 'Butterfly Guard', branches: []},
 //         {name: 'De-La-Riva Guard', branches: []},
 //         {name: 'X Guard', branches: []}
+
+function deleteChart(req, res) {
+    Chart.findOneAndDelete(
+      {_id: req.params.id}, function(err) {
+        res.redirect('/charts');
+      }
+    );
+  }

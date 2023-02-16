@@ -9,6 +9,8 @@ router.get('/', chartsCtrl.index)
 //POST /charts
 router.post('/', chartsCtrl.create);
 
+router.delete('/:id', chartsCtrl.delete);
+
 //PUT /charts/:id
 router.put('/:id', chartsCtrl.update);
 

@@ -155,8 +155,6 @@ textarea {
 }
 
 .modal {
-  top: 50%;
-  left: 40%;
   transform: scale(0);
   display: none;
   border: 1px solid black;
@@ -168,7 +166,7 @@ textarea {
 }
 
 .modal.active {
-  transform: translate(50%, -50%) scale(1);
+  transform: scale(1);
   display: block;
 }
 
@@ -212,6 +210,11 @@ textarea {
 #link-li>a{
   color: #0000EE;
   text-decoration: underline;
+}
+
+#notes-page {
+  display: flex;
+  flex-direction: row;
 }
 
 #scheduler-days {
