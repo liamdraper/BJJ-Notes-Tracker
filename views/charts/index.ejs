@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<ul>
+    <% charts.forEach(function(c) { %>
+    <li>
+        <a href="/charts/<= c._id %>"><%= c.name %></a>
+    </li>
+</ul>
+<% }) %>
+
+Create New Chart:
+<form action="/charts" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name">
+    <input type="submit" name="Submit">
+</form>
+
+<%- include('../partials/footer') %>

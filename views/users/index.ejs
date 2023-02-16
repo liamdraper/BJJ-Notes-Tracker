@@ -4,19 +4,22 @@
     <% if (user?._id.equals(u._id)) { %>
     Weekly Goals:
     <form action="/users/<%= u._id %>?_method=PUT" method="POST">
-        <input type="text" name="weeklyGoals" value="<%= u.weeklyGoals %>">
+        <textarea name="weeklyGoals"><%= u.weeklyGoals %></textarea>
+        <!-- <input type="text" name="weeklyGoals" value="<%= u.weeklyGoals %>"> -->
         <button type="submit">Edit</button>
     </form>
     <br><br>
     Monthly Goals:
     <form action="/users/<%= u._id %>?_method=PUT" method="POST">
-        <input type="text" name="monthlyGoals" value="<%= u.monthlyGoals %>">
+        <textarea name="monthlyGoals"><%= u.monthlyGoals %></textarea>
+        <!-- <input type="text" name="monthlyGoals" value="<%= u.monthlyGoals %>"> -->
         <button type="submit">Edit</button>
     </form>
     <br><br>
     Yearly Goals:
     <form action="/users/<%= u._id %>?_method=PUT" method="POST">
-        <input type="text" name="yearlyGoals" value="<%= u.yearlyGoals %>">
+        <textarea name="yearlyGoals"><%= u.yearlyGoals %></textarea>
+        <!-- <input type="text" name="yearlyGoals" value="<%= u.yearlyGoals %>"> -->
         <button type="submit">Edit</button>
     </form>
     <br><br>

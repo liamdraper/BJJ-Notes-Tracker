@@ -17,6 +17,7 @@ var notesRouter = require('./routes/notes');
 var positionsRouter = require('./routes/positions');
 var linksRouter = require('./routes/links');
 var schedulesRouter = require('./routes/schedules')
+var chartsRouter = require('./routes/charts');
 
 var app = express();
 
@@ -51,6 +52,7 @@ app.use('/notes', notesRouter);
 app.use('/positions', positionsRouter);
 app.use('/links', linksRouter);
 app.use('/schedules', schedulesRouter);
+app.use('/charts', chartsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -7,12 +7,11 @@
     <br>
     <textarea name="content" id="" cols="20" rows="4"></textarea>
 </form>
-
 <ul>
     <% notes.forEach(function(n) { %>
         <% if (user?._id.equals(n.user)) { %>
-    <li><%= n.date %>
-        <br><%= n.content  %>
+    <li><%= n.date.toLocaleDateString() %>
+        <br><%- n.content.replaceAll('\n', '<br>') %>
         <button id="open-button">Edit</button>
         <div class="modal" id="modal">
             <div class="modal-title">Edit Note</div>
