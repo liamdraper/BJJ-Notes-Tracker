@@ -9,6 +9,9 @@ router.get('/', chartsCtrl.index)
 //POST /charts
 router.post('/', chartsCtrl.create);
 
+//PUT /charts/:id
+router.put('/:id', chartsCtrl.update);
+
 router.get('/:id', chartsCtrl.show)
 
 module.exports = router;

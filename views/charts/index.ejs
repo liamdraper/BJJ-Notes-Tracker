@@ -3,7 +3,7 @@
 <ul>
     <% charts.forEach(function(c) { %>
     <li>
-        <a href="/charts/<= c._id %>"><%= c.name %></a>
+        <a href="/charts/<%= c._id %>"><%= c.name %></a>
     </li>
 </ul>
 <% }) %>

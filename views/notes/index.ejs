@@ -3,21 +3,22 @@
 <form action="/notes" method="POST">
     <label>Date:</label>
     <input type="datetime-local" name="date">
-    <input type="submit" value="Add Note">
+    <br><br>
+    <textarea name="content" id="notes-textarea" cols="20" rows="4"></textarea>
     <br>
-    <textarea name="content" id="" cols="20" rows="4"></textarea>
+    <input type="submit" value="Add Note">
 </form>
 <ul>
     <% notes.forEach(function(n) { %>
         <% if (user?._id.equals(n.user)) { %>
-    <li><%= n.date.toLocaleDateString() %>
-        <br><%- n.content.replaceAll('\n', '<br>') %>
+    <li id="notes-li"><u><%= n.date.toLocaleDateString() %></u>
         <button id="open-button">Edit</button>
+        <br><%- n.content.replaceAll('\n', '<br>') %>
         <div class="modal" id="modal">
             <div class="modal-title">Edit Note</div>
             <button id="close-button">&times;</button>
             <form action="/notes/<%= n._id %>?_method=PUT" method="POST">
-                <input class="modal-note" type="text" name="content" value="<%= n.content %>">
+                <textarea name="content" id="notes-textarea" cols="20" rows="4"><%= n.content %></textarea>
                 <button type="submit">Edit Note</button>
             </form>
             <form action="/notes/<%= n._id %>?_method=DELETE" method="POST">

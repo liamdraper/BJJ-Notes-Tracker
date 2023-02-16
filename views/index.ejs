@@ -1,16 +1,30 @@
 <%- include('./partials/header') %>
 
+<div id="home-pic"></div>
+
+<div id="home">
+
 <h1>Welcome to BJJ Notes Tracker!</h1>
+<br>
 <h2>All of your Jiu-Jitsu and grappling notes in one place</h2>
 
 <br><br><br>
-With this app, you can:
-<ul>
-    <li>-Take notes on your daily classes or instructional videos</li><br>
-    <li>-Take notes on </li><br>
-    <li>-Save your favorite BJJ links</li><br>
-    <li>-Write out your BJJ goals, from short to long term</li><br>
-    <li>-Schedule out your classes/workouts for the whole week</li>
-</ul>
+
+<section id="home-items"> 
+    <img id="zoom" src="https://t3.ftcdn.net/jpg/02/73/79/70/360_F_273797075_lqtsBJvUc9QsulXvIexCUHGLJWntTOL5.jpg" alt="">
+    <div>Take notes on your daily classes or instructional videos</div>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDsYP3x0BHNUrOYAZotGfeV_7vs_ss6SKvQw&usqp=CAU" alt="">
+    <div>Take notes on your go-to moves in positions</div>
+    <img src="data:image/png;base64,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" alt="">
+    <div>Save your favorite BJJ links</div>
+    <img src="https://img.freepik.com/premium-vector/clipboard-with-checklist-icon-symbol-web-site-app-design_340607-79.jpg?w=2000" alt="">
+    <div>Write out your BJJ goals, from short to long term</div>
+    <img id="zoom"src="https://i.pinimg.com/474x/55/e0/76/55e07698bca8e4aa1761121600c818e0.jpg" alt="">
+    <div>Schedule out your classes/workouts for the whole week</div>
+    <img src="data:image/png;base64,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" alt="">
+    <div>Create a flow chart for positions/moves</div>
+</section>
+
+</div>
 
 <%- include('./partials/footer') %>

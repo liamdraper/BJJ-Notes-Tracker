@@ -9,9 +9,8 @@ body {
   height: 100vmin;
   /* background-color: #ceeff0; */
   display: grid;
-  grid-template-columns: 40vmin 100vmin;
-  background-image: url("https://media.istockphoto.com/id/1080248694/photo/abstract-gray-background.jpg?b=1&s=170667a&w=0&k=20&c=gGjGq3LMbYXhQjiyeB72jCxj8bTi_HNZHhkPuBwxQ7E=");
-  background-size: 100%;
+  grid-template-columns: 40vmin 140vmin;
+  background-color: #f5f5f5;
 }
 
 nav {
@@ -22,6 +21,10 @@ nav {
   height: 100vmin;
   background-color: #71599e;
   text-align: center;
+}
+
+nav > a {
+
 }
 
 nav > * {
@@ -56,19 +59,70 @@ nav > img {
   margin-left: 5vmin;
 }
 
+#home {
+  background: rgba(160, 160, 160, .8);
+  border-radius: 3px;
+  left: 40vmin;
+  height: 100vmin;
+  top: 0;
+  right: 0;
+  position: fixed;
+  z-index: 2;
+  padding: 0 10px;
+}
+
+#home-pic {
+  background-image: url("https://i.pinimg.com/564x/1b/50/91/1b50914ffc77cecc254c776dda2eed3b.jpg");
+  background-size: cover;
+  display: block;
+  filter: contrast(75%);
+  height: 100vmin;
+  left: 40vmin;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+#home-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#home-items > img {
+  height: 8vmin;
+  border-radius: 50%;
+}
+
+#home-items > div {
+  width: 40vmin;
+  height: 25vmin;
+}
+
+#zoom {
+  
+}
+
 h1, h2 {
   text-align: center;
 }
 
+
 ul {
   list-style-type: none;
+}
+
+#notes-li {
+
 }
 
 #positions-li {
   white-space: pre-wrap;
   border: .4vmin solid gray;
   border-radius: 2vmin;
-  height: 30vmin;
+  height: 20vmin;
   width: 40vmin;
   margin: 2vmin;
 }
@@ -89,26 +143,33 @@ a {
 textarea {
   background-color: #dddddd;
   border-radius: 1vmin;
-  border: .1vmin solid transparent;
+  border: .2vmin solid black;
   outline: none;
   height: 20vmin;
   width: 50vmin;
 }
 
+#notes-textarea {
+  width: 50vmin;
+  height: 20vmin;
+}
+
 .modal {
   top: 50%;
-  left: 50%;
-  transform: translate(50%, -50%) scale(0);
+  left: 40%;
+  transform: scale(0);
+  display: none;
   border: 1px solid black;
   border-radius: 10%;
   z-index: 10;
   background-color: white;
   height: 30vmin;
-  width: 100vmin;
+  width: 50vmin;
 }
 
 .modal.active {
   transform: translate(50%, -50%) scale(1);
+  display: block;
 }
 
 .modal-header {
@@ -216,6 +277,86 @@ textarea {
   border: .05vmin solid black;
 } */
 
-.position-edit {
-  
+#position-edit {
+}
+
+#flow-chart {
+  display: grid;
+  grid-template-columns: repeat(5, 20vmin);
+  grid-template-rows: repeat(5, 20vmin);
+}
+
+#flow-chart > div > form > button {
+  height: 3vmin;
+  width: 10vmin;
+}
+
+#flow-chart > div > form > input, textarea{
+  height: 10vmin;
+  width: 10vmin;
+  background-color: white;
+}
+
+#flow-chart > div > form {
+  transform: scale(0);
+  position: relative;
+}
+
+#flow-chart > div > form.shown {
+  transform: scale(1);
+}
+
+#flow-chart > div > form > button#left {
+  width: 1vmin;
+  height: 10vmin;
+  position: absolute;
+  left: 0;
+  top: 2vmin;
+}
+
+#flow-chart > div > form > button#top {
+  width: 10vmin;
+  height: 2vmin;
+  position: absolute;
+  top: 0;
+  left: 2vmin
+}
+
+#flow-chart > div > form > button#right {
+  width: 1vmin;
+  height: 10vmin;
+  position: absolute;
+  right: 6vmin;
+  top: 2vmin;
+}
+
+#flow-chart > div > form > button#bottom {
+  width: 10vmin;
+  height: 2vmin;  
+  position: absolute;
+  bottom: -4vmin;
+  left: 2vmin
+}
+
+#flow-chart > div > form > div {
+  height: 10vmin;
+  width: 10vmin;
+  position: relative;
+  top: 2vmin;
+  left: 2vmin;
+}
+
+#flow-chart > div > form > div > button#edit {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2vmin;
+  width: 4.5vmin;
+}
+
+#flow-chart > div > form > div > button#hide {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 2vmin
 }
