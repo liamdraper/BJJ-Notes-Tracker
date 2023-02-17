@@ -1,4 +1,4 @@
-# Battleship-Project-1-
+# BJJ-Notes-Tracker
 
 Web application for taking notes for Brazillian Jiu Jitsu classes.
 
