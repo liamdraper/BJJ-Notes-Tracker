@@ -13,10 +13,10 @@
     <% positions.forEach(function(p) { %>
     <% if (user?._id.equals(p.user)) { %>
     <li id="positions-li">
-        <%= p.name %>
         <form class="position-edit" action="/positions/<%= p._id %>?_method=PUT" method="POST">
+            <input id="positions-header" type="text" name="name" value="<%= p.name %>">
+            <button type="submit">Edit</button>
             <textarea name="content" id="positions-textarea"><%= p.content %></textarea>
-            <button type="submit">Edit Position</button>
         </form>
         <form id="positions-delete" action="/positions/<%= p._id %>?_method=DELETE" method="POST">
             <button type="submit">Delete</button>

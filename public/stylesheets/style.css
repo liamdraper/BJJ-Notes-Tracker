@@ -23,10 +23,6 @@ nav {
   text-align: center;
 }
 
-nav > a {
-
-}
-
 nav > * {
   height: 10vmin;
 }
@@ -101,14 +97,9 @@ nav > img {
   height: 25vmin;
 }
 
-#zoom {
-  
-}
-
 h1, h2 {
   text-align: center;
 }
-
 
 ul {
   list-style-type: none;
@@ -116,6 +107,10 @@ ul {
 
 #notes-li {
   margin-bottom: 4vmin;
+}
+
+button {
+  border-radius: 15%;
 }
 
 #positions-ul {
@@ -133,6 +128,12 @@ ul {
   text-align: center;
 }
 
+#positions-header {
+  border:none;
+  background-color: #f5f5f5;
+  font-size: 2.5vmin;
+}
+
 #positions-textarea {
   width: 34vmin;
   margin-left: 2.5vmin;
@@ -141,7 +142,7 @@ ul {
 
 #positions-delete {
   position: relative;
-  bottom: 3.8vmin;
+  bottom: .5vmin;
   left: 14vmin;
 }
 
@@ -201,7 +202,7 @@ textarea {
 
 #modal-delete {
   position: relative;
-  bottom: 3.8vmin;
+  bottom: 1.5vmin;
   left: 14vmin;
   
 }
@@ -233,8 +234,15 @@ textarea {
 
 #scheduler-days {
   display: grid;
-  grid-template-columns: repeat(7, 18vmin);
+  grid-template-columns: repeat(8, 18vmin);
   grid-template-rows: repeat(1, 5vmin);
+  margin-left: 10vmin;
+}
+
+#time-markers {
+  display: grid;
+  grid-template-columns: repeat(1, 8vmin);
+  grid-template-rows: repeat(35, 2vmin);
 }
 
 #scheduler-times {
@@ -243,8 +251,12 @@ textarea {
 } 
 
 #scheduler-times > section > div {
-  font-size: 1.2vmin;
-  overflow-y: visible;
+  border: .05vmin solid gray;
+  font-size: 1.8vmin;
+}
+
+#scheduler-times > section#time-markers > div{
+  border: none;
 }
 
 #mon-col, #tue-col, #wed-col, #thu-col, #fri-col, #sat-col, #sun-col {
@@ -256,6 +268,7 @@ textarea {
 
 #mon-col > .taken, #tue-col > .taken, #wed-col > .taken, #thu-col > .taken, #fri-col > .taken, #sat-col > .taken, #sun-col > .taken {
   font-size: 1.8vmin;
+  overflow-wrap: break-word;
 }
 
 #mon-col > .taken {
@@ -270,8 +283,8 @@ textarea {
   background-color: yellow;
 }
 
-#thur-col > .taken {
-  background-color: purple;
+#thu-col > .taken {
+  background-color: lightblue;
 }
 
 #fri-col > .taken {
@@ -283,19 +296,11 @@ textarea {
 }
 
 #sun-col > .taken {
-  background-color: gray;
+  background-color: #CBC3E3;
 }
 
 .avail {
   background-color: white;
-}
-
-
-/* #scheduler-times div {
-  border: .05vmin solid black;
-} */
-
-#position-edit {
 }
 
 #flow-chart {
@@ -305,7 +310,7 @@ textarea {
 }
 
 #flow-chart > div > form > button {
-  height: 3vmin;
+  height: 2.5vmin;
   width: 10vmin;
 }
 
@@ -315,68 +320,9 @@ textarea {
   background-color: white;
 }
 
-#flow-chart > div {
-  transform: scale(1);
-  position: relative;
-}
-
-#flow-chart > div.shown {
-  transform: scale(1);
-}
-
-#flow-chart > div > form > button#left {
-  width: 1vmin;
-  height: 10vmin;
-  position: absolute;
-  left: 0;
-  top: 2vmin;
-}
-
-#flow-chart > div > form > button#top {
-  width: 10vmin;
-  height: 2vmin;
-  position: absolute;
-  top: 0;
-  left: 2vmin
-}
-
-#flow-chart > div > form > button#right {
-  width: 1vmin;
-  height: 10vmin;
-  position: absolute;
-  right: 6vmin;
-  top: 2vmin;
-}
-
-#flow-chart > div > form > button#bottom {
-  width: 10vmin;
-  height: 2vmin;  
-  position: absolute;
-  bottom: -4vmin;
-  left: 2vmin
-}
-
 #flow-chart > div > form > div {
   height: 10vmin;
   width: 10vmin;
-  position: relative;
-  top: 2vmin;
-  left: 2vmin;
-}
-
-#flow-chart > div > form > div > button#edit {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2vmin;
-  width: 4.5vmin;
-}
-
-#flow-chart > div > form > div > button#hide {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 2vmin
 }
 
 #chart-ul {
@@ -385,4 +331,10 @@ textarea {
 
 #goals-page > form > textarea {
   width: 30vmin;
+}
+
+#schedule-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

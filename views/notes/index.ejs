@@ -3,75 +3,72 @@
 <h3>Create new note:</h3>
 
 <div id="notes-page">
-<form action="/notes" method="POST">
-    <label>Date:</label>
-    <input type="datetime-local" name="date">
-    <br><br>
-    <textarea name="content" id="notes-textarea" cols="20" rows="4"></textarea>
-    <br>
-    <input type="submit" value="Add Note">
-</form>
-<ul>
-    <% notes.forEach(function(n) { %>
-        <% if (user?._id.equals(n.user)) { %>
-    <li id="notes-li"><u><%= n.date.toLocaleDateString() %></u>
-        <button id="open-button">Edit</button>
-        <br><%- n.content.replaceAll('\n', '<br>') %>
-        <div class="modal" id="modal">
-            <div id="modal-title">Edit Note
-                <button id="close-button">&times;</button>
-            </div>  
-            <form action="/notes/<%= n._id %>?_method=PUT" method="POST">
-                <textarea name="content" id="notes-textarea" cols="20" rows="4"><%= n.content %></textarea>
-                <br>
-                <button type="submit">Edit</button>
-            </form>
-            <form id="modal-delete"action="/notes/<%= n._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete</button>
-            </form>
-        </div>
-        <!-- <a href="notes/show">+</a> -->
-    </li>
-        <% } %>
-    <% }); %>   
-</ul> 
+    <form action="/notes" method="POST">
+        <label>Date:</label>
+        <input type="datetime-local" name="date">
+        <br><br>
+        <textarea name="content" id="notes-textarea" cols="20" rows="4"></textarea>
+        <br>
+        <input type="submit" value="Add Note">
+    </form>
+    <ul>
+        <% notes.forEach(function(n) { %>
+            <% if (user?._id.equals(n.user)) { %>
+        <li id="notes-li"><u><%= n.date.toLocaleDateString() %></u>
+            <button id="open-button">Edit</button>
+            <br><%- n.content.replaceAll('\n', '<br>') %>
+            <div class="modal" id="modal">
+                <div id="modal-title">Edit Note
+                    <button id="close-button">&times;</button>
+                </div>  
+                <form action="/notes/<%= n._id %>?_method=PUT" method="POST">
+                    <button type="submit">Edit</button>
+                    <textarea name="content" id="notes-textarea" cols="20" rows="4"><%= n.content %></textarea>
+                </form>
+                <form id="modal-delete"action="/notes/<%= n._id %>?_method=DELETE" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+            <!-- <a href="notes/show">+</a> -->
+        </li>
+            <% } %>
+        <% }); %>   
+    </ul> 
 
-<!-- need to make async?? if no notes exist-->
-<!-- <script>
-    const openBtn = document.getElementById('open-button');
-    const closeBtn = document.getElementById('close-button');
-    const modal = document.getElementById('modal');
-    openBtn.addEventListener('click', (e) => {
-        modal.classList.add('active');
-    })
-    closeBtn.addEventListener('click', (e) => {
-        modal.classList.remove('active');
-    })
-</script> -->
+    <!-- need to make async?? if no notes exist-->
+    <!-- <script>
+        const openBtn = document.getElementById('open-button');
+        const closeBtn = document.getElementById('close-button');
+        const modal = document.getElementById('modal');
+        openBtn.addEventListener('click', (e) => {
+            modal.classList.add('active');
+        })
+        closeBtn.addEventListener('click', (e) => {
+            modal.classList.remove('active');
+        })
+    </script> -->
 
-<script>
-    const openBtns = document.querySelectorAll('#open-button');
-    const closeBtns = document.querySelectorAll('#close-button');
-    const modals = document.querySelectorAll('#modal');
-    for (let i = 0; i < openBtns.length; i++) {
-        openBtns[i].addEventListener('click', (e) => {
-            console.log('click')
-            modals.forEach(function (m) {
-                m.classList.remove('active');
-            modals[i].classList.add('active');
+    <script>
+        const openBtns = document.querySelectorAll('#open-button');
+        const closeBtns = document.querySelectorAll('#close-button');
+        const modals = document.querySelectorAll('#modal');
+        for (let i = 0; i < openBtns.length; i++) {
+            openBtns[i].addEventListener('click', (e) => {
+                console.log('click')
+                modals.forEach(function (m) {
+                    m.classList.remove('active');
+                modals[i].classList.add('active');
+                })
             })
-        })
-    }
-    for (let i = 0; i < closeBtns.length; i++) {
-        closeBtns[i].addEventListener('click', (e) => {
-            console.log('click')
-            modals[i].classList.remove('active');
-        })
-    }
-</script>
+        }
+        for (let i = 0; i < closeBtns.length; i++) {
+            closeBtns[i].addEventListener('click', (e) => {
+                console.log('click')
+                modals[i].classList.remove('active');
+            })
+        }
+    </script>
 
 </div>
 
-
 <%- include('../partials/footer') %> 
-

@@ -11,6 +11,43 @@
         <div id="sun">Sunday</div>
     </div>
     <div id="scheduler-times">
+        <section id="time-markers">
+            <div>6:00am</div>
+            <div>6:30am</div>
+            <div>7:00am</div>
+            <div>7:30am</div>
+            <div>8:00am</div>
+            <div>8:30am</div>
+            <div>9:00am</div>
+            <div>9:30am</div>
+            <div>10:00am</div>
+            <div>10:30am</div>
+            <div>11:00am</div>
+            <div>11:30am</div>
+            <div>12:00pm</div>
+            <div>12:30pm</div>
+            <div>1:00pm</div>
+            <div>1:30pm</div>
+            <div>2:00pm</div>
+            <div>2:30pm</div>
+            <div>3:00pm</div>
+            <div>3:30pm</div>
+            <div>4:00pm</div>
+            <div>4:30pm</div>
+            <div>5:00pm</div>
+            <div>5:30pm</div>
+            <div>6:00pm</div>
+            <div>6:30pm</div>
+            <div>7:00pm</div>
+            <div>7:30pm</div>
+            <div>8:00pm</div>
+            <div>8:30pm</div>
+            <div>9:00pm</div>
+            <div>9:30pm</div>
+            <div>10:00pm</div>
+            <div>10:30pm</div>
+            <div>11:00pm</div>
+        </section>
         <section id="mon-col">
             <div class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=6&&s.timeEnd>=6.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===6)?.activity %></div>
             <div class="<%= schedules.some(s => s.day==='Monday'&&s.timeStart<=6.5&&s.timeEnd>=7) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Monday'&&s.timeStart===6.5)?.activity %></div>
@@ -272,7 +309,7 @@
         </section>
 </section>
 
-<section>
+
 <form action="/schedules" method="POST">
     <label>Activity:</label>
     <input type="text" name="activity">
@@ -363,37 +400,24 @@
     <input type="submit" value="Add Activity">
 </form>
 
+<section id="schedule-list">
+    <% schedules.forEach(function(s) { %>
+        <% if (user?._id.equals(s.user)) { %>
+    <ul>
+        <li>
+            <form action="/schedules/<%= s._id %>?_method=PUT" method="POST">
+                <input type="text" name="activity" value="<%= s.activity %>">
+                <button type="submit">Edit</button>
+            </form>
+            <form action="/schedules/<%= s._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    </ul>
 
-<% schedules.forEach(function(s) { %>
-    <% if (user?._id.equals(s.user)) { %>
-<ul>
-    <li>
-        <form action="/schedules/<%= s._id %>?_method=PUT" method="POST">
-            <input type="text" name="activity" value="<%= s.activity %>">
-            <button type="submit">Edit</button>
-        </form>
-        <form action="/schedules/<%= s._id %>?_method=DELETE" method="POST">
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-</ul>
-
-<% } %>
-<% }) %>
+    <% } %>
+    <% }) %>
 
 </section>
-
-<!-- <script>
-    // Add a button for each scheduled out activity
-    const monCol = document.querySelectorAll('#scheduler-times > section > div');
-    monCol.forEach(function(div) {
-        if (div.innerHTML) {
-            // Create button for first div
-            const btn = document.createElement('button');
-            btn.style.height= '2vmin';
-            div.appendChild(btn);
-        }
-    })
-</script> -->
 
 <%- include('../partials/footer') %>
