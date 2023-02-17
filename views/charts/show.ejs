@@ -1,6 +1,10 @@
 <%- include('../partials/header') %>
 
-
+<h3>
+    <form class="position-edit" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+    <input id="positions-header" type="text" name="name" value="<%= chart.name %>">
+    <button type="submit">Edit</button>
+</h3>
 
 <section id="flow-chart">
     <div>

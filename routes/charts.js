@@ -3,17 +3,14 @@ const router = express.Router();
 const chartsCtrl = require('../controllers/charts');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
+router.get('/', ensureLoggedIn, chartsCtrl.index)
 
-router.get('/', chartsCtrl.index)
+router.post('/', ensureLoggedIn, chartsCtrl.create);
 
-//POST /charts
-router.post('/', chartsCtrl.create);
+router.delete('/:id', ensureLoggedIn, chartsCtrl.delete);
 
-router.delete('/:id', chartsCtrl.delete);
+router.put('/:id', ensureLoggedIn, chartsCtrl.update);
 
-//PUT /charts/:id
-router.put('/:id', chartsCtrl.update);
-
-router.get('/:id', chartsCtrl.show)
+router.get('/:id', ensureLoggedIn, chartsCtrl.show)
 
 module.exports = router;
