@@ -41,11 +41,6 @@ function update(req, res) {
     );
   }
 
-// {name: 'Closed Guard', branches: []},
-//         {name: 'Butterfly Guard', branches: []},
-//         {name: 'De-La-Riva Guard', branches: []},
-//         {name: 'X Guard', branches: []}
-
 function deleteChart(req, res) {
     Chart.findOneAndDelete(
       {_id: req.params.id}, function(err) {

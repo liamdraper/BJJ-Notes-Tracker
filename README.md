@@ -17,6 +17,7 @@ Web application for taking notes for Brazillian Jiu Jitsu classes.
 
 ## Getting Started
 - [Deployed website](https://bjj-notes.herokuapp.com/)
+- [Trello Planning Board](https://trello.com/b/hxgBuaW5/project-2-bjj-notes-tracker)
 - [Wikpedia article for BJJ](https://en.wikipedia.org/wiki/Brazilian_jiu-jitsu)
 
 After opening up the welcome page, sign into a Google account to start taking and saving notes.
