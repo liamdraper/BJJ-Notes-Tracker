@@ -17,6 +17,7 @@
         </svg>
     </div>
     <div>
+        
         <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.1"><%= chart.branches[1] %></textarea>
             <button type="submit">Edit</button>

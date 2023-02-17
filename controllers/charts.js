@@ -15,10 +15,10 @@ function index(req, res) {
 }
 
 function create(req, res) {
-    //req.body.user = req.user._id;
+    req.body.user = req.user._id;
     const chart = new Chart(req.body);
     chart.save (function(err) {
-        //req.body.user = req.user._id;
+        req.body.user = req.user._id;
         if (err) return res.redirect('/charts');
         res.redirect('/charts');
     })

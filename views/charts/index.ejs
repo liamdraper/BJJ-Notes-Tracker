@@ -11,6 +11,7 @@ Create New Chart:
 
 <ul id="chart-ul">
     <% charts.forEach(function(c) { %>
+        <% if (user?._id.equals(c.user)) { %>
     <li>
         <a href="/charts/<%= c._id %>"><%= c.name %></a>
         <form action="/charts/<%= c._id %>?_method=DELETE" method="POST">
@@ -18,6 +19,7 @@ Create New Chart:
         </form>
     </li>
 </ul>
+    <% } %>
 <% }) %>
 <br>
 
