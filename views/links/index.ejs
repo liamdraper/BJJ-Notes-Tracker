@@ -1,13 +1,11 @@
 <%- include('../partials/header') %>
 
-Create a new link: 
+<h3>Create a new link:</h3>
 <form action="/links" method="POST">
     <label>Link:</label>
     <input type="text" name="link">
     <input type="submit" name="Submit">
 </form>
-
-Links:
 
 <ul id="link-ul">
     <% links.forEach(function(l) { %> 
@@ -21,7 +19,5 @@ Links:
         <% } %>
     <% }) %>
 </ul>
-
-<a href="/links/shared">Communiy Links</a>
 
 <%- include('../partials/footer') %>

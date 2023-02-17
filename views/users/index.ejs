@@ -1,29 +1,31 @@
 <%- include('../partials/header') %>
 
+<div id="goals-page">
 <% users.forEach(function(u) { %> 
     <% if (user?._id.equals(u._id)) { %>
     Weekly Goals:
+    <br><br>
     <form action="/users/<%= u._id %>?_method=PUT" method="POST">
         <textarea name="weeklyGoals"><%= u.weeklyGoals %></textarea>
-        <!-- <input type="text" name="weeklyGoals" value="<%= u.weeklyGoals %>"> -->
         <button type="submit">Edit</button>
     </form>
     <br><br>
     Monthly Goals:
+    <br><br>
     <form action="/users/<%= u._id %>?_method=PUT" method="POST">
         <textarea name="monthlyGoals"><%= u.monthlyGoals %></textarea>
-        <!-- <input type="text" name="monthlyGoals" value="<%= u.monthlyGoals %>"> -->
         <button type="submit">Edit</button>
     </form>
     <br><br>
     Yearly Goals:
+    <br><br>
     <form action="/users/<%= u._id %>?_method=PUT" method="POST">
         <textarea name="yearlyGoals"><%= u.yearlyGoals %></textarea>
-        <!-- <input type="text" name="yearlyGoals" value="<%= u.yearlyGoals %>"> -->
         <button type="submit">Edit</button>
     </form>
     <br><br>
     <% } %>
     <% }) %>
+</div>
 
 <%- include('../partials/footer') %>

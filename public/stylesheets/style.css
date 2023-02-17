@@ -5,11 +5,11 @@
 body {
   padding-top: none;
   margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
   height: 100vmin;
   /* background-color: #ceeff0; */
   display: grid;
-  grid-template-columns: 40vmin 140vmin;
+  grid-template-columns: 40vmin 150vmin;
   background-color: #f5f5f5;
 }
 
@@ -115,20 +115,34 @@ ul {
 }
 
 #notes-li {
+  margin-bottom: 4vmin;
+}
 
+#positions-ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 #positions-li {
-  white-space: pre-wrap;
   border: .4vmin solid gray;
   border-radius: 2vmin;
   height: 20vmin;
   width: 40vmin;
   margin: 2vmin;
+  text-align: center;
 }
 
-li > * {
-  
+#positions-textarea {
+  width: 34vmin;
+  margin-left: 2.5vmin;
+  margin-top: .5vmin;
+}
+
+#positions-delete {
+  position: relative;
+  bottom: 3.8vmin;
+  left: 14vmin;
 }
 
 nav >:hover {
@@ -150,7 +164,7 @@ textarea {
 }
 
 #notes-textarea {
-  width: 50vmin;
+  width: 40vmin;
   height: 20vmin;
 }
 
@@ -163,18 +177,12 @@ textarea {
   background-color: white;
   height: 30vmin;
   width: 50vmin;
+  text-align: center;
 }
 
 .modal.active {
   transform: scale(1);
   display: block;
-}
-
-.modal-header {
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .modal-title {
@@ -189,6 +197,13 @@ textarea {
   background: none;
   font-size: 4vmin;
   font-weight: bold;
+}
+
+#modal-delete {
+  position: relative;
+  bottom: 3.8vmin;
+  left: 14vmin;
+  
 }
 
 .modal-header .close-button:hover {
@@ -213,13 +228,12 @@ textarea {
 }
 
 #notes-page {
-  display: flex;
-  flex-direction: row;
+  margin-left: 25vmin;
 }
 
 #scheduler-days {
   display: grid;
-  grid-template-columns: repeat(7, 10vmin);
+  grid-template-columns: repeat(7, 18vmin);
   grid-template-rows: repeat(1, 5vmin);
 }
 
@@ -235,12 +249,13 @@ textarea {
 
 #mon-col, #tue-col, #wed-col, #thu-col, #fri-col, #sat-col, #sun-col {
   display: grid;
-  grid-template-columns: repeat(1, 10vmin);
+  grid-template-columns: repeat(1, 18vmin);
   grid-template-rows: repeat(35, 2vmin);
   border: .1vmin solid black;
 }
 
-#mon-col div, #tue-col div, #wed-col div, #thu-col div, #fri-col div, #sat-col div, #sun-col div {
+#mon-col > .taken, #tue-col > .taken, #wed-col > .taken, #thu-col > .taken, #fri-col > .taken, #sat-col > .taken, #sun-col > .taken {
+  font-size: 1.8vmin;
 }
 
 #mon-col > .taken {
@@ -300,12 +315,12 @@ textarea {
   background-color: white;
 }
 
-#flow-chart > div > form {
-  transform: scale(0);
+#flow-chart > div {
+  transform: scale(1);
   position: relative;
 }
 
-#flow-chart > div > form.shown {
+#flow-chart > div.shown {
   transform: scale(1);
 }
 
@@ -362,4 +377,12 @@ textarea {
   bottom: 0;
   right: 0;
   height: 2vmin
+}
+
+#chart-ul {
+  list-style-type: disc;
+}
+
+#goals-page > form > textarea {
+  width: 30vmin;
 }

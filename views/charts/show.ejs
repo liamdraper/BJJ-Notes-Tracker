@@ -7,6 +7,23 @@
 
 
 <section id="flow-chart">
+    <div id="shown">
+        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+            <textarea name="branches.0"><%= chart.branches[0] %></textarea>
+            <button type="submit">Edit</button>
+        </form>
+        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+            <input type="text" name="branches.1">
+            <button type="submit">></button>
+        </form>
+    </div>
+    <div>
+        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+            <textarea name="branches.1"><%= chart.branches[1] %></textarea>
+            <button type="submit">Edit</button>
+        </form>
+    </div>
+    
     <!-- <div>
         <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.0"><%= chart.branches[0] %></textarea>
@@ -166,9 +183,10 @@
     </div> -->
     
 
-    <div>
+    <!-- <div>
+        <form action=""></form>
+        <button id="right"></button>
         <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
-            <button id="right">></button>
             <button id="bottom">▼</button>
             <div>
                 <textarea name="branches.0"><%= chart.branches[0] %></textarea>
@@ -179,7 +197,7 @@
     </div>
     <div>
         <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
-            <button id="left"><</button>
+            <button id="left" ></button>
             <button id="right">></button>
             <button id="bottom">▼</button>
             <div>
@@ -482,6 +500,6 @@
             form.classList.add('shown')
         })
     })
-</script>
+</script> -->
 
 <%- include('../partials/footer') %>

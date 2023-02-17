@@ -1,5 +1,8 @@
 <%- include('../partials/header') %>
 
+<h3>Create new note:</h3>
+
+<div id="notes-page">
 <form action="/notes" method="POST">
     <label>Date:</label>
     <input type="datetime-local" name="date">
@@ -15,14 +18,16 @@
         <button id="open-button">Edit</button>
         <br><%- n.content.replaceAll('\n', '<br>') %>
         <div class="modal" id="modal">
-            <div class="modal-title">Edit Note</div>
-            <button id="close-button">&times;</button>
+            <div id="modal-title">Edit Note
+                <button id="close-button">&times;</button>
+            </div>  
             <form action="/notes/<%= n._id %>?_method=PUT" method="POST">
                 <textarea name="content" id="notes-textarea" cols="20" rows="4"><%= n.content %></textarea>
-                <button type="submit">Edit Note</button>
+                <br>
+                <button type="submit">Edit</button>
             </form>
-            <form action="/notes/<%= n._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete Note</button>
+            <form id="modal-delete"action="/notes/<%= n._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete</button>
             </form>
         </div>
         <!-- <a href="notes/show">+</a> -->
@@ -64,6 +69,8 @@
         })
     }
 </script>
+
+</div>
 
 
 <%- include('../partials/footer') %> 

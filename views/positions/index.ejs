@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-Create a new position:
+<h3>Create a new position:</h1>
 <form action="/positions" method="POST">
     <label>Position:</label>
     <input type="text" name="name">
@@ -9,19 +9,16 @@ Create a new position:
     <input type="submit" value="Add Position">
 </form>
 
-Positions:
-
-<ul>
+<ul id="positions-ul">
     <% positions.forEach(function(p) { %>
     <% if (user?._id.equals(p.user)) { %>
     <li id="positions-li">
         <%= p.name %>
-        ⎯⎯⎯⎯⎯⎯⎯
         <form class="position-edit" action="/positions/<%= p._id %>?_method=PUT" method="POST">
-            <input class="modal-note" type="text" name="content" value="<%= p.content %>">
+            <textarea name="content" id="positions-textarea"><%= p.content %></textarea>
             <button type="submit">Edit Position</button>
         </form>
-        <form action="/positions/<%= p._id %>?_method=DELETE" method="POST">
+        <form id="positions-delete" action="/positions/<%= p._id %>?_method=DELETE" method="POST">
             <button type="submit">Delete</button>
         </form>
     </li>

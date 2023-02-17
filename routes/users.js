@@ -9,6 +9,6 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/', ensureLoggedIn, usersCtrl.index);
 
 //PUT /users/:id
-router.put('/:id', usersCtrl.update);
+router.put('/:id', ensureLoggedIn, usersCtrl.update);
 
 module.exports = router;
