@@ -85,6 +85,8 @@ nav > img {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 150vmin;
+  margin-left: 5vmin;
 }
 
 #home-items > img {

@@ -308,8 +308,6 @@
             <div class="<%= schedules.some(s => s.day==='Sunday'&&s.timeStart<=23&&s.timeEnd>=23.5) ? 'taken' : 'avail' %>"><%= schedules.find(s => s.day==='Sunday'&&s.timeStart===23)?.activity %></div>
         </section>
 </section>
-
-
 <form action="/schedules" method="POST">
     <label>Activity:</label>
     <input type="text" name="activity">
@@ -399,7 +397,6 @@
     </select>
     <input type="submit" value="Add Activity">
 </form>
-
 <section id="schedule-list">
     <% schedules.forEach(function(s) { %>
         <% if (user?._id.equals(s.user)) { %>
@@ -414,10 +411,7 @@
             </form>
         </li>
     </ul>
-
     <% } %>
     <% }) %>
-
 </section>
-
 <%- include('../partials/footer') %>
