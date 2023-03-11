@@ -7,7 +7,6 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
   height: 100vmin;
-  /* background-color: #ceeff0; */
   display: grid;
   grid-template-columns: 40vmin 150vmin;
   background-color: #f5f5f5;
@@ -234,6 +233,10 @@ textarea {
   margin-left: 25vmin;
 }
 
+#goals-page > form > textarea {
+  width: 30vmin;
+}
+
 #scheduler-days {
   display: grid;
   grid-template-columns: repeat(8, 18vmin);
@@ -305,38 +308,75 @@ textarea {
   background-color: white;
 }
 
-#flow-chart {
-  display: grid;
-  grid-template-columns: repeat(5, 20vmin);
-  grid-template-rows: repeat(5, 20vmin);
-}
-
-#flow-chart > div > form > button {
-  height: 2.5vmin;
-  width: 10vmin;
-}
-
-#flow-chart > div > form > input, textarea{
-  height: 10vmin;
-  width: 10vmin;
-  background-color: white;
-}
-
-#flow-chart > div > form > div {
-  height: 10vmin;
-  width: 10vmin;
-}
-
 #chart-ul {
   list-style-type: disc;
-}
-
-#goals-page > form > textarea {
-  width: 30vmin;
 }
 
 #schedule-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+#flow-chart {
+  display: grid;
+  grid-template-columns: repeat(5, 20vmin);
+  grid-template-rows: repeat(5, 20vmin);
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none
+}
+
+#flow-chart > div > form > input, textarea{
+  position: relative;
+  height: 10vmin;
+  width: 10vmin;
+  left: 3.5vmin;
+  top: .5vmin;
+  background-color: white;
+}
+
+#edit {
+  position: relative;
+  width: 10vmin;
+  height: 2.5vmin;
+  left: 3.5vmin;
+  bottom: 4vmin;
+}
+
+#up {
+  position: relative;
+  bottom: 20vmin;
+  left: 3.5vmin;
+  width: 10vmin;
+  height: 2.5vmin;
+}
+
+#right {
+  position: relative;
+  right: .7vmin;
+  bottom: 14vmin;
+  width: 3vmin;
+  height: 10vmin
+}
+
+#down {
+  position: relative;
+  bottom: 15vmin;
+  left: 3.5vmin;
+  width: 10vmin;
+  height: 2.5vmin;
+}
+
+#left {
+  position: relative;
+  right: 10vmin;
+  bottom: 14vmin;
+  width: 3vmin;
+  height: 10vmin
 }

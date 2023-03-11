@@ -8,154 +8,253 @@
 
 <section id="flow-chart">
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[0].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.0"><%= chart.branches[0] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='' value="." type="submit">▲</button>
+            <button id="left" name='' value="." type="submit">◀</button>
+            <button id="right" name='branches.1' value="." type="submit">▶</button>
+            <button id="down" name='branches.5' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[1].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.1"><%= chart.branches[1] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='' value="." type="submit">▲</button>
+            <button id="left" name='branches.0' value="." type="submit">◀</button>
+            <button id="right" name='branches.2' value="." type="submit">▶</button>
+            <button id="down" name='branches.6' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[2].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.2"><%= chart.branches[2] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='' value="." type="submit">▲</button>
+            <button id="left" name='branches.1' value="." type="submit">◀</button>
+            <button id="right" name='branches.3' value="." type="submit">▶</button>
+            <button id="down" name='branches.7' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[3].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.3"><%= chart.branches[3] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='' value="." type="submit">▲</button>
+            <button id="left" name='branches.2' value="." type="submit">◀</button>
+            <button id="right" name='branches.4' value="." type="submit">▶</button>
+            <button id="down" name='branches.8' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[4].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.4"><%= chart.branches[4] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='' value="." type="submit">▲</button>
+            <button id="left" name='branches.3' value="." type="submit">◀</button>
+            <button id="right" name='' value="." type="submit">▶</button>
+            <button id="down" name='branches.9' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[5].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.5"><%= chart.branches[5] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.0' value="." type="submit">▲</button>
+            <button id="left" name='' value="." type="submit">◀</button>
+            <button id="right" name='branches.6' value="." type="submit">▶</button>
+            <button id="down" name='branches.10' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[6].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.6"><%= chart.branches[6] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.1' value="." type="submit">▲</button>
+            <button id="left" name='branches.5' value="." type="submit">◀</button>
+            <button id="right" name='branches.7' value="." type="submit">▶</button>
+            <button id="down" name='branches.11' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[7].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.7"><%= chart.branches[7] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.2' value="." type="submit">▲</button>
+            <button id="left" name='branches.6' value="." type="submit">◀</button>
+            <button id="right" name='branches.8' value="." type="submit">▶</button>
+            <button id="down" name='branches.12' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[8].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.8"><%= chart.branches[8] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.3' value="." type="submit">▲</button>
+            <button id="left" name='branches.7' value="." type="submit">◀</button>
+            <button id="right" name='branches.9' value="." type="submit">▶</button>
+            <button id="down" name='branches.13' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[9].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.9"><%= chart.branches[9] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.4' value="." type="submit">▲</button>
+            <button id="left" name='branches.8' value="." type="submit">◀</button>
+            <button id="right" name='' value="." type="submit">▶</button>
+            <button id="down" name='branches.14' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[10].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.10"><%= chart.branches[10] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.5' value="." type="submit">▲</button>
+            <button id="left" name='' value="." type="submit">◀</button>
+            <button id="right" name='branches.11' value="." type="submit">▶</button>
+            <button id="down" name='branches.15' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[11].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.11"><%= chart.branches[11] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.6' value="." type="submit">▲</button>
+            <button id="left" name='branches.10' value="." type="submit">◀</button>
+            <button id="right" name='branches.12' value="." type="submit">▶</button>
+            <button id="down" name='branches.16' value="." type="submit">▼</button> 
         </form>
     </div>  
     <div>
-        <form class="shown" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[12].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.12"><%= chart.branches[12] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.7' value="." type="submit">▲</button>
+            <button id="left" name='branches.11' value="." type="submit">◀</button>
+            <button id="right" name='branches.13' value="." type="submit">▶</button>
+            <button id="down" name='branches.17' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[13].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.13"><%= chart.branches[13] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.8' value="." type="submit">▲</button>
+            <button id="left" name='branches.12' value="." type="submit">◀</button>
+            <button id="right" name='branches.14' value="." type="submit">▶</button>
+            <button id="down" name='branches.18' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[14].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.14"><%= chart.branches[14] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.9' value="." type="submit">▲</button>
+            <button id="left" name='branches.13' value="." type="submit">◀</button>
+            <button id="right" name='branches.15' value="." type="submit">▶</button>
+            <button id="down" name='branches.19' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[15].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.15"><%= chart.branches[15] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.10' value="." type="submit">▲</button>
+            <button id="left" name='branches.14' value="." type="submit">◀</button>
+            <button id="right" name='branches.16' value="." type="submit">▶</button>
+            <button id="down" name='branches.20' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[16].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.16"><%= chart.branches[16] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.11' value="." type="submit">▲</button>
+            <button id="left" name='branches.15' value="." type="submit">◀</button>
+            <button id="right" name='branches.17' value="." type="submit">▶</button>
+            <button id="down" name='branches.21' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[17].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.17"><%= chart.branches[17] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.12' value="." type="submit">▲</button>
+            <button id="left" name='branches.16' value="." type="submit">◀</button>
+            <button id="right" name='branches.18' value="." type="submit">▶</button>
+            <button id="down" name='branches.22' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[18].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.18"><%= chart.branches[18] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.13' value="." type="submit">▲</button>
+            <button id="left" name='branches.17' value="." type="submit">◀</button>
+            <button id="right" name='branches.19' value="." type="submit">▶</button>
+            <button id="down" name='branches.23' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[19].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.19"><%= chart.branches[19] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.14' value="." type="submit">▲</button>
+            <button id="left" name='branches.18' value="." type="submit">◀</button>
+            <button id="right" name='branches.20' value="." type="submit">▶</button>
+            <button id="down" name='branches.24' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[20].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.20"><%= chart.branches[20] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.15' value="." type="submit">▲</button>
+            <button id="left" name='branches.19' value="." type="submit">◀</button>
+            <button id="right" name='branches.21' value="." type="submit">▶</button>
+            <button id="down" name='' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[21].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.21"><%= chart.branches[21] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.16' value="." type="submit">▲</button>
+            <button id="left" name='branches.20' value="." type="submit">◀</button>
+            <button id="right" name='branches.22' value="." type="submit">▶</button>
+            <button id="down" name='' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[22].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.22"><%= chart.branches[22] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.17' value="." type="submit">▲</button>
+            <button id="left" name='branches.21' value="." type="submit">◀</button>
+            <button id="right" name='branches.23' value="." type="submit">▶</button>
+            <button id="down" name='' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[23].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.23"><%= chart.branches[23] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.18' value="." type="submit">▲</button>
+            <button id="left" name='branches.22' value="." type="submit">◀</button>
+            <button id="right" name='branches.24' value="." type="submit">▶</button>
+            <button id="down" name='' value="." type="submit">▼</button> 
         </form>
     </div>
     <div>
-        <form action="/charts/<%= chart._id %>?_method=PUT" method="POST">
+        <form class="<%= chart.branches[24].length ? 'show' : 'hide' %>" action="/charts/<%= chart._id %>?_method=PUT" method="POST">
             <textarea name="branches.24"><%= chart.branches[24] %></textarea>
-            <button type="submit">Edit</button>
+            <button id="edit" type="submit">Edit</button>
+            <button id="up" name='branches.19' value="." type="submit">▲</button>
+            <button id="left" name='branches.23' value="." type="submit">◀</button>
+            <button id="right" name='' value="." type="submit">▶</button>
+            <button id="down" name='' value="." type="submit">▼</button> 
         </form>
     </div>
 

@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const chartSchema = new Schema({
     name: {type: String, required: true},
-    branches: {type: [], default: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']},
+    branches: {type: [], default: ['', '', '', '', '', '', '', '', '', '', '', '', '', '.', '', '', '', '', '', '', '', '', '', '', '']},
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
