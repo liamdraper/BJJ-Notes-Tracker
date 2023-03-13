@@ -16,7 +16,7 @@ Web application for taking notes for Brazillian Jiu Jitsu classes.
 - MongoDB/Mongoose
 
 ## Getting Started
-- [Deployed website](https://bjj-notes.herokuapp.com/)
+- [Deployed website](https://bjj-notes-tracker.herokuapp.com/)
 - [Trello Planning Board](https://trello.com/b/hxgBuaW5/project-2-bjj-notes-tracker)
 - [Wikpedia article for BJJ](https://en.wikipedia.org/wiki/Brazilian_jiu-jitsu)
 
